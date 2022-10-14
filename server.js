@@ -22,7 +22,42 @@ const db = mysql.createConnection(
     console.log('Connected to the election database.')
   );
 
-// Default response for any other request (Not Found)
+
+// Create a candidate
+/*const sql = `INSERT INTO candidates (id, first_name, last_name, industry_connected) 
+              VALUES (?,?,?,?)`;
+const params = [8, 'Montague', 'Summers', 1];
+
+db.query(sql, params, (err, result) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log(result);
+});
+*/
+
+// Delete a candidate, will say affected rows in 1, meaning that only one row was affected by the DELETE command.
+/*db.query(`DELETE FROM candidates WHERE id = ?`, 1, (err, result) => {
+    if (err) {
+      console.log(err);
+    }
+    console.log(result);
+  });
+*/
+
+// GET a single candidate
+/*db.query(`SELECT * FROM candidates WHERE id = 1`, (err, row) => {
+    if (err) {
+      console.log(err);
+    }
+    console.log(row);
+  }); */
+
+/* db.query(`SELECT * FROM candidates`, (err, rows) => {
+  console.log(rows);
+}); */
+
+// Default response for any other request (Not Found) - Catchall
 app.use((req, res) => {
   res.status(404).end();
 });
