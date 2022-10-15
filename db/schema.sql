@@ -4,3 +4,15 @@ CREATE TABLE candidates (
   last_name VARCHAR(30) NOT NULL,
   industry_connected BOOLEAN NOT NULL
 );
+
+CREATE TABLE parties (
+  id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  description TEXT
+);
+/* Note that we used a TEXT data type for description 
+instead of VARCHAR. A party's description has potential 
+to be anywhere from one to several sentences long, but
+VARCHAR data type must declare a limit on the length.
+TEXT can store much longer strings 
+*/
